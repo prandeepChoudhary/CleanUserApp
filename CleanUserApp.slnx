@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="CleanUserApp.API/CleanUserApp.API.csproj" />
+  <Project Path="CleanUserApp.Application/CleanUserApp.Application.csproj" />
+  <Project Path="CleanUserApp.BlazorUI/CleanUserApp.BlazorUI.csproj" />
+  <Project Path="CleanUserApp.Domain/CleanUserApp.Domain.csproj" />
+  <Project Path="CleanUserApp.Infrastructure/CleanUserApp.Infrastructure.csproj" />
+</Solution>

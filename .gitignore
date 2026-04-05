@@ -1,0 +1,63 @@
+# Build artifacts
+**/bin/
+**/obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / VS Code
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.sln.iml
+
+# ASP.NET temporary files
+*.vs/
+
+# NuGet packages
+*.nupkg
+**/packages/
+
+# Backup & temporary files
+*~
+*.tmp
+*.temp
+*.log
+
+# Mac OS
+.DS_Store
+
+# Environment files
+.env
+.env.*
+
+# DotNet publish output
+**/publish/
+
+# IIS Express
+**/.vs/**
+
+# Entity Framework
+*.db
+*.db-journal
+
+# JetBrains Rider
+.idea/
+
+# npm / frontend
+node_modules/
+
+# JetBrains Rider caches
+*.sln.iml
+
+# Ignore local user settings for ASP.NET Core
+appsettings.Development.json
+
+# Optional package restore files
+*.nuget.props
+*.nuget.targets
