@@ -23,17 +23,20 @@ jobs:
         with:
           dotnet-version: '10.x'
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
+      - name: Restore dependencies
+        run: dotnet restore CleanUserApp.API/CleanUserApp.API.csproj
 
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      - name: Build CleanUserApp.API
+        run: dotnet build CleanUserApp.API/CleanUserApp.API.csproj --configuration Release
+
+      - name: Publish CleanUserApp.API
+        run: dotnet publish CleanUserApp.API/CleanUserApp.API.csproj -c Release -o ./myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: ./myapp
 
   deploy:
     runs-on: ubuntu-latest
@@ -47,6 +50,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: .net-app
+          path: ./myapp
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -61,4 +65,4 @@ jobs:
         with:
           app-name: 'cleanuser-api'
           slot-name: 'Production'
-          package: .
+          package: ./myapp
